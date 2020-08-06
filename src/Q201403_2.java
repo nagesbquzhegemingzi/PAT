@@ -1,6 +1,8 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
-public class Q201304_2 {
+public class Q201403_2 {
 
     public static void main(String[] args) {
         ArrayList<Integer> window = new ArrayList<>();
@@ -9,13 +11,11 @@ public class Q201304_2 {
         Scanner scanner = new Scanner(System.in);
         int wins = scanner.nextInt();
         int dots = scanner.nextInt();
-        for (int i = 0; i < wins*4; i++) {
+        for (int i = 0; i < wins * 4; i++) {
             window.add(scanner.nextInt());
-
         }
         for (int i = 0; i < dots * 2; i++) {
             dotcoordinate.add(scanner.nextInt());
-
         }
         for (int i = 0; i < wins; i++) {
             priority.add(i);
