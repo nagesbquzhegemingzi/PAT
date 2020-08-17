@@ -2,11 +2,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Scanner;
-
+//60 我真是吐了,也不给错误的测试用例,我人瓜了
 //这个题是真你妈傻逼
 public class Q201403_3 {
     public static ArrayList<String> noOptions = new ArrayList<String>();
     public static ArrayList<String> withOptions = new ArrayList<String>();
+
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -66,9 +67,30 @@ public class Q201403_3 {
             }
         }
         StringBuilder stringBuilder = new StringBuilder();
-        stringStringLinkedHashMap.forEach((x, y) -> {
-            stringBuilder.append(x + " " + y + " ");
-        });
+        for (char i = 'a'; i <= 'z'; i++) {
+            if (stringStringLinkedHashMap.containsKey(String.valueOf('-') + i)) {
+                String x, y;
+                x = '-' + (String.valueOf(i));
+                y = stringStringLinkedHashMap.get(x);
+                if (y == "") {
+                    stringBuilder.append(x + " ");
+                } else {
+                    stringBuilder.append(x + " " + y + " ");
+                }
+            }
+        }
+//        stringStringLinkedHashMap.forEach((x, y) -> {
+//
+//            //stringBuilder.append(x + " " + y + " "); 有错误,未考虑y为""时的情况
+//            if(y==""){
+//                stringBuilder.append(x + " ");
+//            }
+//            else {
+//                stringBuilder.append(x + " " + y + " ");
+//            }
+//            //            stringBuilder.append(x + " " + y + y==""?"":" ");这句竟然不行,我真傻了
+//        }
+//        );
         return stringBuilder.toString();
     }
 
@@ -79,5 +101,9 @@ public class Q201403_3 {
             }
         }
         return true;
+    }
+
+    public static void test() {
+        System.out.println("132");
     }
 }
